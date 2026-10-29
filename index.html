@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhas Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Minhas Tarefas</h1>
+      <p>Organize suas atividades do dia!</p>
+    </header>
+
+    <form id="form-tarefa">
+      <input
+        type="text"
+        id="input-tarefa"
+        placeholder="Digite uma tarefa..."
+        autocomplete="off"
+      >
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <p id="mensagem-erro" role="alert"></p>
+
+    <section class="contadores">
+      <div class="card total">
+        <span>Total</span>
+        <strong id="contador-total">0</strong>
+      </div>
+
+      <div class="card pendente">
+        <span>Pendentes</span>
+        <strong id="contador-pendente">0</strong>
+      </div>
+
+      <div class="card concluida">
+        <span>Concluídas</span>
+        <strong id="contador-concluida">0</strong>
+      </div>
+    </section>
+
+    <section class="lista-container">
+      <h2>Lista de tarefas</h2>
+
+      <nav class="filtros" aria-label="Filtrar tarefas">
+        <button class="filtro ativo" data-filtro="todas">
+          Todas (<span id="filtro-total">0</span>)
+        </button>
+
+        <button class="filtro" data-filtro="pendente">
+          Pendentes (<span id="filtro-pendente">0</span>)
+        </button>
+
+        <button class="filtro" data-filtro="concluida">
+          Concluídas (<span id="filtro-concluida">0</span>)
+        </button>
+      </nav>
+
+      <ul id="lista-tarefas"></ul>
+
+      <p id="mensagem-vazia">
+        Nenhuma tarefa cadastrada.
+      </p>
+
+      <button id="limpar-concluidas" class="limpar">
+        Limpar tarefas concluídas
+      </button>
+    </section>
+  </main>
+</body>
+</html>
